@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Trabalhando com listas</h1>
+ 
+<!--################################# Listas ordenada ##################################-->
+
+    <h2>Listas ordenadas</h2>
+    <p>
+        Em listas ordenas podemos usar como indexador números, letras e números romanos, ambos em maiúsculo ou minúsculo.
+    </p>
+    <p>
+        Para isso usamos a tag &lt;ol&gt; <strong>(ordered list)</strong> e dentro do &lt;ol&gt; usamos o &lt;li&gt; <strong>(list item)</strong> para cada item.</p>
+    <p>
+        Para o tipo de indexador e o inicio usamos os comandos: type e start, desse modo teremos:</p>
+    </p>
+    <p>
+        Note que o inicio (start) é dado em número independentemente do padrão adotado no indexador.
+    </p>
+
+    <ol>
+        <li>
+            <strong>
+                <p>&lt;ol type = "1" start = "4"&gt;</p>
+            </strong>
+        </li>
+        <ol type="1"start = "4">
+            <li>Acordar</li>
+            <li>ligar para João</li>
+            <li>Tomar café</li>
+            <li>Escovar os dentes</li>
+        </ol>
+        <li>
+            <strong>
+                <p>&lt;ol type = "A" start = "3"&gt;</p>
+            </strong>
+        </li>
+        <ol type="a"start = "3">
+            <li>Acordar</li>
+            <li>ligar para João</li>
+            <li>Tomar café</li>
+            <li>Escovar os dentes</li>
+        </ol>
+        <li>
+            <strong>
+                <p>&lt;ol type = "A" start = "2"&gt;</p>
+            </strong>
+        </li>
+        <ol type="A" start="2">
+            <li>Acordar</li>
+            <li>ligar para João</li>
+            <li>Tomar café</li>
+            <li>Escovar os dentes</li>
+        </ol>
+        <li>
+            <strong>
+                <p>&lt;ol type = "i" start = "2"&gt;</p>
+            </strong>
+        </li>
+        <ol type="i" start = "2">
+            <li>Acordar</li>
+            <li>ligar para João</li>
+            <li>Tomar café</li>
+            <li>Escovar os dentes</li>
+        </ol>   
+        <li>
+            <strong>
+                <p>&lt;ol type = "I"&gt;. </p>
+            </strong>
+        </li>
+        <ol type="I">
+            <li>Acordar</li>
+            <li>ligar para João</li>
+            <li>Tomar café</li>
+            <li>Escovar os dentes</li>
+        </ol>
+        <p>Note que coso não é declarado o start, então a contagem começa do primeiro número/letra</p>
+    </ol>
+
+    <p>Para um exemplo do código de lista click <a href="index008-01.html">aqui</a>:</p>
+
+<!--################################# Listas não ordenada ##################################-->    
+
+    <h2>Listas não ordenadas</h2>
+
+    <p>Para listas não ordenadas usamos a tag &lt;ul&gt; <strong>(unordered list)</strong>, e dentro da &lt;ul&gt; também usamos o &lt;li&gt;.</p>
+    <p>Em listas não ordenadas podemos usar os marcadores "disc", "circle" e "square" e desse modo temos:</p>
+
+    <ol>
+        <strong>
+            <li>
+                <p>&lt;ul type = "disc"&gt;</p>
+            </li>
+        </strong>
+        <ul type="disc">
+            <li>Pão</li>
+            <li>Leite</li>
+            <li>Tomate</li>
+        </ul>
+        <strong>
+            <li>
+                <p>&lt;ul type = "circle"&gt;</p>
+            </li>
+        </strong>
+        <ul type="circle">
+            <li>Pão</li>
+            <li>Leite</li>
+            <li>Tomate</li>
+        </ul>
+        <strong>
+            <li>
+                <p>&lt;ul type = "square"&gt;</p>
+            </li>
+        </strong>
+        <ul type="square">
+            <li>Pão</li>
+            <li>Leite</li>
+            <li>Tomate</li>
+        </ul>
+    </ol>    
+    
+<!--#################################listas mescladas ##################################-->
+
+    <h2>Mesclagem de listas</h2>
+    <p>Note que podemos colocar &lt;ol&gt; <strong>(ordered lists)</strong> dentro de &lt;ol&gt;, &lt;ol&gt; dentro de &lt;ul&gt; e vice-versa. Desse modo temos:</p>
+    <ol>
+        <strong>
+            <li>Playstation</li>
+        </strong>
+        <ol type = "a">
+            <li>PS1</li>
+            <ul type="disc">
+                <li>Gran Turismo</li>
+                <li>Resident Evil</li>
+            </ul>
+            <li>PS2</li>
+            <li>PS3</li>
+            <li>PS4</li>
+            <li>PS5</li>
+        </ol>
+        <strong>
+            <li>xbosta</li>
+        </strong>
+        <ol type = "i">
+            <li>xbosta</li>
+            <ul type = "circle">
+                <li>Uma bosta qualquer</li>
+                <li>Outra bosta qualquer</li>
+            </ul>
+            <li>xbosta 360</li>
+            <li>xbosta one</li>
+            <li>xbosta series x</li>
+            <li>xbosta series s</li>
+        </ol>
+    </ol>
+
+    <h2>Lista de definição</h2>
+
+    <p>
+        Usamos a tg &lt;dl&gt; (definition list) para lista de definições. Dentro de &lt;dl&gt; usamos as tags &lt;dt&gt; (termo/sigla) e &lt;dd&gt; (definição), usaremos o exemplo do HTML e CSS.
+    </p>
+    <dl>
+        <dt>HTML</dt> 
+        <dd>HiperTextMarkupLanguage</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+    </dl>
+    
+<!--################################# Link voltar ##################################-->
+            
+<hr>
+<a href="../index.html">Voltar</a>  
+<hr>     
+
+
+</body>
+</html>

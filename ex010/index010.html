@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Midias em HTML5</title>
+    
+</head>
+<body>
+
+<!--################################# Imagens dinâmicas ##################################-->
+
+    <h1>Imagens dinâmicas</h1>
+
+    <p>Podemos criar imagens dinâmicas, ou seja, carregar a imagem de acordo com o tamanho requisitado.</p>
+
+    <p>Para isso, além da tag &lt;img&gt;, usamos a tag &lt;picture&gt; e a tag:</p>
+    <p><strong>&lt;source media = "(max-width: 750px)" srcset = "imagens/foto-p.png"&gt;</strong></p>
+
+    <p>Onde max-width: 750 refere-se a largura máxima da imagem.</p>
+
+    <p>Podemos testar aumentando ou diminuindo a largura do navegador, pode tentar.</p>
+
+    <p>No caso usado aqui o código ficou da seguinte maneira, nesse caso a <strong>ordem</strong> do <strong>source</strong> importa.</p>
+
+    <pre>
+    <strong>&lt;picture&gt;</strong>    
+        <strong>&lt;source media = "(max-width: 750px)" srcset = "imagens/foto-p.png"&gt;</strong>
+        <strong>&lt;source media = "(max-width: 1050px)" srcset = "imagens/foto-m.png"&gt;</strong>
+        <strong>&lt;img src="imagens/foto-g.png" alt="Imagem Grande"&gt;</strong>
+    <strong>&lt;/picture&gt;</strong>
+    </pre>
+
+    <picture>
+        <source media = "(max-width: 750px)" srcset = "imagens/foto-p.png">
+        <source media = "(max-width: 1050px)" srcset = "imagens/foto-m.png">
+        <img src="imagens/foto-g.png" alt="Imagem teste">
+    </picture>
+
+<!--################################# Reproduzindo audios ##################################-->
+
+    <h1>Reproduzindo audios</h1>
+        
+        <p>Para inserir um audio usando HTML5 usamos o tag &lt;audio&gt; com o endereço da mídia e o comando "controls".</p>
+
+        <p>Exemplo:</p>
+        <p><strong>&lt;audio src="midias/just-dance.mp3" controls&gt;&lt;/audio&gt;</strong></p>
+        <p>Segue abaixo o resultado da dessa tag:</p>
+
+        <audio src="midias/just-dance.mp3" controls></audio>
+
+        <p>Ao invés de controls poderíamos usar o "autoplay", porém o "autoplay" não é compatível com todos navegadores.</p>
+
+<!--######################## Audio com tamanhos e formatos dinâmicos ########################-->
+
+        <h2>Audios "dinâmicos"</h2>
+        <p>Assim como acontece com imagens dinâmicas, podemos fazer algo semelhante com o audio.</p>
+        <p>Para driblarmos possíveis problemas de compatibilidade de arquivos entre navegadores podemos utilizar a mesma ideia de imagens dinâmicas, o ou seja, colocar uma lista de audios em diferentes formatos de modo que caso não seja possível o navegador carregar o primeiro então ele vai para o segundo e assim por diante.</p>
+        <p>Os principais arquivos suportados são mp3, ogg e wav, porém arquivos wav são grandes e devem ser evitados.</p>
+        <p>Para realizar esse "dinamismo" de audio usamos o seguinte código.</p>
+        <pre>
+            <strong>&lt;audio preload = "metadata" controls&gt;</strong>    
+                <strong>&lt;source src = "midias/just-dance.mp3 type = "audio/mpeg"&gt;</strong>
+                <strong>&lt;source src = "midias/just-dance.ogg type = "audio/ogg"&gt;</strong>
+                <strong>&lt;source src = "midias/just-dance.wav type = "audio/wav&gt;</strong>   
+                <strong>&lt;p&gt;Caso não consiga ouvir o audio click &lt;a href="midias/just-dance.mp3"&gt;aqui&lt;/a&gt; e faça o download.&lt;/p&gt;</strong>               
+            <strong>&lt;/audio&gt;</strong>
+        </pre>
+
+        <p>Com esse código teremos um resultado visuali logo abaixo igual ao anterior, porém temos uma maior compatibilidade e proteção a problemas.</p>
+        <p>Note que só vai aparecer o link para download se os três arquivos anteriores falharem. </p> 
+
+        <audio preload ="metadata" controls>
+            <source src ="midias/just-dance.mp3"  type = "audio/mpeg">
+            <source src ="midias/just-dance.mp3"  type = "audio/mpeg">
+            <source src ="midias/just-dance.mp3"  type = "audio/mpeg">
+            <p>Caso não consiga ouvir o audio click <a href="midias/just-dance.mp3">aqui</a> e faça o download.</p>
+        </audio>
+        <p> Em <strong>preload</strong> podemos usar os seguintes parâmetros:</p> 
+            <p><strong>&lt;audio preload = "auto" controls&gt;</strong> Carrega todo o conteúdo do audio</p> 
+            <p><strong>&lt;audio preload = "metadata" controls&gt;</strong> Carrega apenas algunsparâmetros do audio. </p>
+            <p><strong>&lt;audio preload = "none" controls&gt;</strong> Só carrega qualquer parâmetro do audio e o próprio audio se for dado play. Nesse caso só seria carregado o comando de download da música após dar o play.</p>
+
+<!--################################# Link voltar ##################################-->
+            
+<hr>
+<a href="../index.html">Voltar</a>  
+<hr>    
+
+</body>
+</html>

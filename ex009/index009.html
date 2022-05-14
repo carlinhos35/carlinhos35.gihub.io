@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Trabalhando com links</title>
+</head>
+<body>
+
+    <h1>Usando links internos e externos</h1>
+
+<!--################################# Links externos ##################################-->
+
+    <ol>
+        
+        <li>
+            <h2>Links externos</h2>
+        </li>
+
+            <h3>Links utilizando a mesma aba do navegador</h3>
+        
+            
+
+
+                <p>É costume usar esse tipo de link quando estamos navegando dentro do mesmo projeto</p>               
+                <p>Usamos a tag <strong>&lt;a&gt;</strong>, no exemplo abaixo a palavra "aqui" virará um link para a site da globo usariamos esse comando:</p>
+                <p> <strong>&lt;a href="https://www.globo.com" &gt; aqui:&lt;/a&gt;</strong></p>
+                <p>Podemos testar clicanco aqui <a href="https://www.globo.com">aqui:</a></p>
+                <p>Note que com esse comando o navegador ira abrir o site da globo na mesma aba que o site inicial, <strong><em>logo sua página será fechada</em></strong>.</p>          
+               
+            <h3>Links utilizando uma outra aba do navegador</h3>
+                
+            <ol type = "a">
+                <li><p>Nesse caso usamos dentro da tag &lt;a&gt; os seguintes parâmetros.</p>
+                <p> &lt;a href="https://www.globo.com" target = "_blank" &gt; aqui:&lt;/a&gt;</p>
+
+                <p>Podemos testar clicando <a href="https://www.globo.com" target = "_blank" rel = "external">aqui:</a></p></li>
+
+                <li>
+                    <p>Podemos "avisar" o navegador que estamos usando um link externo usando a comando <strong>rel = "external"</strong>, segue o exemplo logo abaixo:</p>
+                    &lt;a href="https://www.globo.com" target = "_blank" rel = "externo"&gt; aqui:&lt;/a&gt;</p>
+                </li>
+
+            </ol>
+
+            <h3>Evitar indexação com sites externos</h3>
+
+            <ol type = "a">
+                <li>
+                    <p>Quando usamos links externos podemos "avisar" o navegador/buscador que damos aval a ele usando a comando <br> <strong>rel = "nofollow"</strong>, desse modo evita que o buscador indexe o conteúdo desse site.</p>
+                    <p>Desse modo temos:</p>
+                    <p><p><strong>"&lt;a href="https://www.globo.com" rel = "nofollow" &gt; aqui:&lt;/a&gt;"</strong></p></p>
+                    <p>Podemos testar clicanco aqui <a href="https://www.globo.com" target = "_blank" rel = "nofollow">aqui:</a></p>
+
+                </li>
+
+            </ol>
+
+<!--################################# Links internos ##################################-->         
+
+            <li><h2>Links internos da sua página</h2></li>
+            <ol type = "a">
+                <li>Usando o nome do próprio arquivo.
+                <p><strong>&lt;a href="pag002.html" &gt; aqui:&lt;/a&gt;</strong></p>
+                <p>Podemos ir para a segunda página clicando <a href="pag002.html" rel = "previous">aqui:</a></p></li>
+                <li>Podemos avisar o navegador e sistemas de buscas o direcionamento dos links usando <strong>rel = "previous"</strong> ou  <strong>rel = "next"</strong> e desse modo o navegador e sistemas de buscas sabem a ordem das páginas dentro de um site com links em cascata.
+                <p>Exemplos:</p></li>
+                
+                <ol type = "i">
+                    <li>
+                        <p><strong> PREVIOUS - &lt;a href="pag002.html" rel = "previous" &gt; aqui:&lt;/a&gt;</strong></p>
+                    </li>
+                    <li>
+                        <p><strong> NEXT - &lt;a href="pag002.html" rel = "next" &gt; aqui:&lt;/a&gt;</strong></p>
+                    </li>
+                    <p></p>
+                </ol>
+              
+                
+                    <li>Usando uma pasta diferente da pasta raiz do projeto:</li>
+                    <ol type = "i">
+                        
+                        <p>Quando usarmos uma página diferente temos que colocá-la no endereço.</p>
+
+                        <p>Podemos ir para a Terceira página clicando <a href="noticias/pag003.html" rel = "previous">aqui:</a></p></li>
+
+                        <li><p>Ida:</p></li>
+                        
+                        <p>Exemplo:</p>
+                        
+                        <p><strong>&lt;a href="noticias/pag003.html" rel = "previous" &gt; aqui:&lt;/a&gt;</strong></p>
+
+                       
+
+                        <li><p>Volta:</p></li>
+
+                        <p>Exemplo:</p>
+
+                        <strong>
+                            <p>&lt;a href="../index.html" rel = "next"&gt;aqui:&lt;/a&gt;</p>
+                        </strong>
+
+                    </ol>
+                </li>
+
+
+            </ol>            
+
+<!--################################# Links para Download ##################################-->
+
+            <li>
+                <h2>Links para Downloads</h2>
+                <p>Para criarmos um link para download usamos também a tag &lt;a&gt; e em href colocamos o local do arquivo. 
+
+                <p>Note que nesse caso o navegador abre o PDF ao invés de baixá-lo, isso acontece com alguns arquivos, desse modo para podermo, daí temos duas possibilidades:</p>
+                <ul>
+                    <li>Alguns arquivo como PDF podem abrir no próprio navegador.
+
+                        <p>A tag usada para isso será:</p>
+
+                        <p><strong>"&lt;a href="livro/meulivro.pdf" &gt; aqui:&lt;/a&gt;"</strong></p>
+
+                        <p>O resultado que teremos será esse:</p>
+
+                        <p>Vc pode testar clicando <a href="livro/meulivro.pdf">aqui</a>.</p>
+
+                    </li>
+
+                    <li>
+                        <p>Para "obrigar" o navegador baixar o arquivo usados tipos. No caso deo PDF usamos o tipo type = "application/pdf".</p>
+
+                        <p>Vc pode testar clicando <a href="livro/meulivro.pdf" type = "application/pdf">aqui</a>.</p>
+
+                        <p>Podemos encontrar os tipos de cada arquivo no site <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target = "_blank".>https://www.iana.org/assignments/media-types/media-types.xhtml</a></p>
+
+                    </li>
+
+                </ul>
+
+                <P>OBS: Podemos usar href"#", como vc pode ver com "#" no lugar do local do arquivo ou endereço do site, desse modo visualmente eu tenho o link, porém ele leva ao início da página. </P>
+
+                <p>Vc pode testar clicando <a href="#">aqui</a>.</p>
+
+            </li>
+    </ol>  
+
+<!--################################# Link voltar ##################################-->
+            
+<hr>
+<a href="../index.html">Voltar</a>  
+<hr>    
+    
+</body>
+</html>
